@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veo 3 - Consistent Character Prompt Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Veo 3 Consistent Character Prompt Generator</h1>
+        <p>Buat prompt karakter yang konsisten untuk Veo 3 dengan mudah. Isi kolom di bawah ini dan dapatkan prompt yang terstruktur dan siap pakai.</p>
+
+        <div class="form-container">
+            <div class="form-column">
+                <label for="judulScene">1. Judul Scene</label>
+                <input type="text" id="judulScene" placeholder="Contoh: Terminal bus malam">
+
+                <label for="deskripsiKarakter">2. Deskripsi Karakter Inti</label>
+                <textarea id="deskripsiKarakter" rows="8" placeholder="Contoh: Seorang vlogger pria muda asal Jawa berusia 29 tahun.&#10;Perawakan/Bentuk Tubuh: tubuh kekar, tinggi 169cm...&#10;Pakaian: mengenakan tshirt hitam bertuliskan ‘CAKAP’..."></textarea>
+
+                <label for="detailSuara">3. Detail Suara Karakter</label>
+                <textarea id="detailSuara" rows="6" placeholder="Contoh: Dia berbicara dengan suara pria muda yang hangat dan penuh semangat.&#10;Nada: Young Male.&#10;Timbre: bersahabat dan enerjik..."></textarea>
+
+                <label for="aksiKarakter">4. Aksi Karakter</label>
+                <textarea id="aksiKarakter" rows="3" placeholder="Contoh: berjalan di sekitar terminal bus malam sambil melihat-lihat..."></textarea>
+
+                <label for="ekspresiKarakter">5. Ekspresi Karakter</label>
+                <textarea id="ekspresiKarakter" rows="3" placeholder="Contoh: Karakter menunjukkan ekspresi kagum dan antusias..."></textarea>
+            </div>
+            <div class="form-column">
+                <label for="latar">6. Latar Tempat & Waktu</label>
+                <textarea id="latar" rows="4" placeholder="Contoh: latar tempat: di terminal bus antar kota malam hari...&#10;Waktu: malam hari, hujan rintik-rintik."></textarea>
+
+                <label for="detailVisual">7. Detail Visual Tambahan</label>
+                <div class="visual-details-group">
+                    <select id="cameraMovement">
+                        <option value="" disabled selected>Pilih Gerakan Kamera...</option>
+                        <!-- Common movements -->
+                        <option value="Static Shot (Tangkapan Statis)">Static Shot (Tangkapan Statis)</option>
+                        <option value="Panning Shot (Tangkapan Panning)">Panning Shot (Tangkapan Panning)</option>
+                        <option value="Tilting Shot (Tangkapan Miring)">Tilting Shot (Tangkapan Miring)</option>
+                        <option value="Tracking Shot / Dolly Shot (Tangkapan Mengikuti)">Tracking Shot / Dolly Shot (Tangkapan Mengikuti)</option>
+                        <option value="Crane Shot (Tangkapan Derek)">Crane Shot (Tangkapan Derek)</option>
+                        <option value="Handheld Shot (Tangkapan Genggam)">Handheld Shot (Tangkapan Genggam)</option>
+                        <option value="Zoom In/Out (Perbesar/Perkecil)">Zoom In/Out (Perbesar/Perkecil)</option>
+                        <!-- Higgsfield.ai movements -->
+                        <option value="3D Rotation (Rotasi 3D)">3D Rotation (Rotasi 3D)</option>
+                        <option value="360 Orbit (Orbit 360)">360 Orbit (Orbit 360)</option>
+                        <option value="Arc Left (Busur Kiri)">Arc Left (Busur Kiri)</option>
+                        <option value="Arc Right (Busur Kanan)">Arc Right (Busur Kanan)</option>
+                        <option value="Buckle Up (Kencangkan Sabuk)">Buckle Up (Kencangkan Sabuk)</option>
+                        <option value="Bullet Time (Waktu Peluru)">Bullet Time (Waktu Peluru)</option>
+                        <option value="Car Chasing (Pengejaran Mobil)">Car Chasing (Pengejaran Mobil)</option>
+                        <option value="Car Grip (Pegangan Mobil)">Car Grip (Pegangan Mobil)</option>
+                        <option value="Crane Down (Derek Turun)">Crane Down (Derek Turun)</option>
+                        <option value="Crane Over The Head (Derek di Atas Kepala)">Crane Over The Head (Derek di Atas Kepala)</option>
+                        <option value="Crane Up (Derek Naik)">Crane Up (Derek Naik)</option>
+                        <option value="Crash Zoom In (Perbesar Cepat)">Crash Zoom In (Perbesar Cepat)</option>
+                        <option value="Crash Zoom Out (Perkecil Cepat)">Crash Zoom Out (Perkecil Cepat)</option>
+                        <option value="Dolly In (Dolly Masuk)">Dolly In (Dolly Masuk)</option>
+                        <option value="Dolly Left (Dolly Kiri)">Dolly Left (Dolly Kiri)</option>
+                        <option value="Dolly Out (Dolly Keluar)">Dolly Out (Dolly Keluar)</option>
+                        <option value="Dolly Right (Dolly Kanan)">Dolly Right (Dolly Kanan)</option>
+                        <option value="Dolly Zoom In (Dolly Zoom Masuk)">Dolly Zoom In (Dolly Zoom Masuk)</option>
+                        <option value="Dolly Zoom Out (Dolly Zoom Keluar)">Dolly Zoom Out (Dolly Zoom Keluar)</option>
+                        <option value="Double Dolly (Dolly Ganda)">Double Dolly (Dolly Ganda)</option>
+                        <option value="Dutch Angle (Sudut Belanda)">Dutch Angle (Sudut Belanda)</option>
+                        <option value="Fisheye (Mata Ikan)">Fisheye (Mata Ikan)</option>
+                        <option value="Focus Change (Perubahan Fokus)">Focus Change (Perubahan Fokus)</option>
+                        <option value="FPV Drone (Drone FPV)">FPV Drone (Drone FPV)</option>
+                        <option value="Glam (Glamor)">Glam (Glamor)</option>
+                        <option value="Handheld (Genggam)">Handheld (Genggam)</option>
+                        <option value="Head Tracking (Pelacakan Kepala)">Head Tracking (Pelacakan Kepala)</option>
+                        <option value="Hyperlapse">Hyperlapse</option>
+                        <option value="Incline (Miring)">Incline (Miring)</option>
+                        <option value="Jib Down (Jib Turun)">Jib Down (Jib Turun)</option>
+                        <option value="Jib Up (Jib Naik)">Jib Up (Jib Naik)</option>
+                        <option value="Lazy Susan (Meja Putar)">Lazy Susan (Meja Putar)</option>
+                        <option value="Low Shutter (Rana Lambat)">Low Shutter (Rana Lambat)</option>
+                        <option value="Mouth In (Mulut Masuk)">Mouth In (Mulut Masuk)</option>
+                        <option value="Object POV (Sudut Pandang Objek)">Object POV (Sudut Pandang Objek)</option>
+                        <option value="Overhead (Dari Atas)">Overhead (Dari Atas)</option>
+                        <option value="Robo Arm (Lengan Robot)">Robo Arm (Lengan Robot)</option>
+                        <option value="Snorricam">Snorricam</option>
+                        <option value="Static (Statis)">Static (Statis)</option>
+                        <option value="Super Dolly In (Super Dolly Masuk)">Super Dolly In (Super Dolly Masuk)</option>
+                        <option value="Super Dolly Out (Super Dolly Keluar)">Super Dolly Out (Super Dolly Keluar)</option>
+                        <option value="Through Object In (Menembus Objek Masuk)">Through Object In (Menembus Objek Masuk)</option>
+                        <option value="Through Object Out (Menembus Objek Keluar)">Through Object Out (Menembus Objek Keluar)</option>
+                        <option value="Tilt Down (Miring ke Bawah)">Tilt Down (Miring ke Bawah)</option>
+                        <option value="Tilt up (Miring ke Atas)">Tilt up (Miring ke Atas)</option>
+                        <option value="Timelapse Human (Selang Waktu Manusia)">Timelapse Human (Selang Waktu Manusia)</option>
+                        <option value="Timelapse Landscape (Selang Waktu Pemandangan)">Timelapse Landscape (Selang Waktu Pemandangan)</option>
+                        <option value="Whip Pan (Geser Cepat)">Whip Pan (Geser Cepat)</option>
+                        <option value="Wiggle (Goyangan)">Wiggle (Goyangan)</option>
+                        <option value="YoYo Zoom">YoYo Zoom</option>
+                        <option value="Zoom In (Perbesar)">Zoom In (Perbesar)</option>
+                        <option value="Zoom Out (Perkecil)">Zoom Out (Perkecil)</option>
+                    </select>
+                    <textarea id="detailVisualText" rows="2" placeholder="Pencahayaan: natural dari lampu jalan...&#10;Gaya Video/Art Style: cinematic realistis...&#10;Kualitas Visual: Resolusi 4K."></textarea>
+                </div>
+                
+                <label for="suasana">8. Suasana Keseluruhan</label>
+                <textarea id="suasana" rows="2" placeholder="Contoh: Suasana sibuk, ramai, dengan kesan perjalanan malam yang hidup..."></textarea>
+
+                <label for="suaraLingkungan">9. Suara Lingkungan/Ambience</label>
+                <textarea id="suaraLingkungan" rows="3" placeholder="Contoh: SOUND: suara mesin bus menyala, pengumuman dari pengeras suara..."></textarea>
+
+                <label for="dialog">10. Dialog Karakter</label>
+                <textarea id="dialog" rows="3" placeholder="Contoh: DIALOG dalam Bahasa Indonesia: Karakter berkata: Tiap kota punya terminal kayak gini..."></textarea>
+
+                <label for="negativePrompt">11. Negative Prompt</label>
+                <textarea id="negativePrompt" rows="4" placeholder="Contoh: Hindari: teks di layar, subtitle, tulisan di video, font, logo, distorsi..."></textarea>
+            </div>
+        </div>
+
+        <button id="generateBtn">Generate Prompt</button>
+
+        <div class="output-container">
+            <div class="output-column">
+                <h2>Prompt (Bahasa Indonesia) - Editable</h2>
+                <textarea id="outputIndonesia" rows="20"></textarea>
+            </div>
+            <div class="output-column">
+                <h2>Final Prompt (English) - Read Only</h2>
+                <textarea id="outputEnglish" rows="20" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
